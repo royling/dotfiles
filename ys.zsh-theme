@@ -45,7 +45,6 @@ ys_hg_prompt_info() {
 }
 
 # Prompt format: \n # USER at MACHINE in DIRECTORY on git:BRANCH STATE [TIME] \n $ 
-#%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
 local ret_status="%(?:%{$fg_bold[green]%}$ :%{$fg_bold[red]%}$ %s)"
 PROMPT="
 %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
