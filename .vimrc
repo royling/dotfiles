@@ -39,7 +39,9 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Pathogen for all vim plugins
 execute pathogen#infect()
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -125,10 +127,11 @@ set number
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
+
 set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
-"colorscheme base16-solarized
+colorscheme base16-solarized
+"let g:solarized_termcolors=256
+"colorscheme solarized
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -136,6 +139,7 @@ if has("gui_running")
     set guioptions+=e
     set t_Co=256
     set guitablabel=%M\ %t
+    set guifont=Source_Code_Pro:h13
 endif
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -211,6 +215,9 @@ map <leader>bd :Bclose<cr>
 " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>
 
+map <leader>l :bnext<cr>
+map <leader>h :bprevious<cr>
+
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
@@ -247,7 +254,12 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+
+" vim-airline plugin rocks
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline_section_c='%F%m'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -397,3 +409,28 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+
+" Start vim with maxmized window
+"au GUIEnter * simalt ~x
+
+
+" CtrlP plugin
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_map = '<C-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" Search by file name
+let g:ctrlp_by_filename = 1
+let g:ctrlp_regexp = 1
+" Show dot files
+let g:ctrlp_show_hidden = 1
+"let g:ctrlp_max_files = 2000
+" Open new file in a new tab when pressing <c-y>
+let g:ctrlp_open_new_file = 't'
+
+
+" multi-cursor
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-d>'
+"let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'

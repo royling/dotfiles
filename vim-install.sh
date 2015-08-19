@@ -5,7 +5,7 @@ if [[ -e "~/.vimrc" ]]; then
     mv ~/.vimrc ~/.vimrc.orig
 fi
 # link to .vimrc in this dir
-ln -s .vimrc ~/.vimrc
+ln -s $PWD/.vimrc ~/.vimrc
 
 # install pathogen
 if [[ ! -d "~/.vim" || ! -d "~/.vim/autoload" ]]; then
@@ -15,11 +15,11 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # install plugins
 cd ~/.vim/bundle
-git clone https://github.com/altercation/vim-colors-solarized
-#git clone https://github.com/chriskempson/base16-vim
+#git clone https://github.com/altercation/vim-colors-solarized
+git clone https://github.com/chriskempson/base16-vim
 git clone https://github.com/kien/ctrlp.vim
 #git clone https://github.com/scrooloose/nerdtree
-#git clone https://github.com/bling/vim-airline
+git clone https://github.com/bling/vim-airline
 git clone https://github.com/tpope/vim-surround
 #git clone https://github.com/scrooloose/syntastic
 git clone https://github.com/airblade/vim-gitgutter
