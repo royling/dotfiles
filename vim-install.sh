@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
+# TODO does this work if the dir is a symbolic link?
+cwd_abs_path=`cd $(dirname $0); pwd`
+
 if [[ -e "~/.vimrc" ]]; then
     # backup .vimrc if it exists
     mv ~/.vimrc ~/.vimrc.orig
 fi
 # link to .vimrc in this dir
-ln -s $PWD/.vimrc ~/.vimrc
+ln -s $cwd_abs_path/.vimrc ~/.vimrc
 
 # install pathogen
 if [[ ! -d "~/.vim" || ! -d "~/.vim/autoload" ]]; then
