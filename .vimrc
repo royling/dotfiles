@@ -128,12 +128,12 @@ set number
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
+set t_Co=256
 
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
     set guioptions+=e
-    set t_Co=256
     set guitablabel=%M\ %t
 
     set background=dark
@@ -166,10 +166,10 @@ set ffs=unix,dos,mac
 " Set font according to system
 if has("mac") || has("macunix")
     set gfn=Source\ Code\ Pro:h15,Menlo:h15
-elseif has("win16") || has("win32")
-    set gfn=Source\ Code\ Pro:h12,Bitstream\ Vera\ Sans\ Mono:h11
+elseif has("win16") || has("win32") || has("win32unix")
+    set gfn=Source\ Code\ Pro:h12
 elseif has("linux")
-    set gfn=Source\ Code\ Pro:h12,Bitstream\ Vera\ Sans\ Mono:h11
+    set gfn=Source\ Code\ Pro:h12
 elseif has("unix")
     set gfn=Monospace\ 11
 endif
@@ -281,11 +281,6 @@ set laststatus=2
 
 " Format the status line
 "set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
-" vim-airline plugin rocks
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=1
-let g:airline_section_c='%F%m'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -435,6 +430,13 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+
+
+" vim-airline plugin rocks
+let g:airline_theme="powerlineish"
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline_section_c='%F%m'
 
 
 " CtrlP plugin
