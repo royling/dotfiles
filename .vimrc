@@ -136,9 +136,6 @@ if has("gui_running")
     set guioptions+=e
     set guitablabel=%M\ %t
 
-    set background=dark
-    colorscheme base16-solarized
-
     " Disable scrollbars
     set guioptions-=r
     set guioptions-=R
@@ -153,9 +150,13 @@ if has("gui_running")
         au GUIEnter * simalt ~x
     endif
 else
-    colorscheme desert
-    let g:colors_name="desert"
+    " Fix colors issue in console vim
+    " see http://stackoverflow.com/questions/7278267/incorrect-colors-with-vim-in-iterm2-using-solarized
+    let g:solarized_termtrans=1
 endif
+
+set background=dark
+colorscheme solarized
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -459,3 +460,4 @@ let g:multi_cursor_next_key='<C-d>'
 "let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
+
