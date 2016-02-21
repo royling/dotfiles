@@ -1,0 +1,11 @@
+[push]
+	default = simple
+[user]
+	name = royling
+	email = royling0024@gmail.com
+[alias]
+	dc = diff --cached
+	co = checkout
+	cob = checkout -b
+	l = log --oneline
+	amend = commit -a --amend
