@@ -1,14 +1,13 @@
 [push]
 	default = simple
 [user]
-	name = royling
+	name = Roy Ling
 	email = royling0024@gmail.com
 [alias]
 	b = branch
 	d = diff
 	dc = diff --cached
 	co = checkout
-	cob = checkout -b
 	l = log --oneline
 	s = status
 	a = !git add . && git status
