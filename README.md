@@ -8,7 +8,7 @@ Create symbolic links for `~/.zshrc`, `~/.bashrc` or `~/.bash_profile` and `~/.t
 ## ZSH
 
 - Install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-- Use customized theme
+- Use customized theme (_ys.zsh-theme_ in this repo)
 
 ## VIM
 
