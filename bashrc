@@ -60,3 +60,6 @@ export PROMPT_COMMAND=prompt_cmd
 
 export PATH=$HOME/bin:$PATH
 
+# Git autocomplete
+# wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+source ~/git-completion.bash
