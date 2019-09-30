@@ -1,0 +1,10 @@
+[character]
+symbol = "λ"
+use_symbol_for_status = true
+
+[git_status]
+show_sync_count = true
+
+[memory_usage]
+disabled = true
+

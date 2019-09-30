@@ -56,7 +56,8 @@ prompt_cmd() {
 
   PS1="$PURPLEBOLD# $CYANBOLD\u$RESETCOLOR at $GREEN\h$RESETCOLOR in $YELLOWBOLD\w $git_info $RESETCOLOR[\t]\n${prompter_color}λ$RESETCOLOR "
 }
-export PROMPT_COMMAND=prompt_cmd
+#export PROMPT_COMMAND=prompt_cmd
+eval "$(starship init bash)"
 
 export PATH=$HOME/bin:$PATH
 
