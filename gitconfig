@@ -3,18 +3,3 @@
 [user]
 	name = Roy Ling
 	email = royling0024@gmail.com
-[alias]
-	b = branch
-	d = diff
-	dc = diff --cached
-	co = checkout
-	l = log --oneline
-	s = status
-	a = !git add . && git status
-	au = !git add -u . && git status
-	aa = !git add . && git add -u . && git status
-	c = commit
-	cm = commit -m
-	ca = commit --amend # careful
-	ac = !git add . && git commit
-	acm = !git add . && git commit -m
