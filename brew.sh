@@ -1,4 +1,4 @@
-brew install vim --with-override-system-vi
+brew install vim
 brew install tree lftp trash wget dos2unix
 brew install tmux
 
