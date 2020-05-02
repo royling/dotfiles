@@ -3,7 +3,13 @@ dotfiles for OSX
 
 # How to use
 
-Create symbolic links for `~/.zshrc`, `~/.bashrc` or `~/.bash_profile` and `~/.tmux.conf`
+1. Create symbolic links for `~/.bashrc` and `~/.tmux.conf`:
+    ```sh
+    ln -s bashrc ~/.bashrc
+    ln -s tmux.conf ~/.tmux.conf
+    ```
+
+1. Run `install.sh`
 
 ## iTerm
 
@@ -21,21 +27,7 @@ Create symbolic links for `~/.zshrc`, `~/.bashrc` or `~/.bash_profile` and `~/.t
 
 ## Starship: customize shell prompt
 
-- `brew install starship`
 - Copy `starship.toml` to `~/.config/`
-
-## Git
-- Bash Autocompletion
-  ```sh
-  wget -qO ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-  echo -e '\n. ~/.git-completion.bash' >> ~/.bashrc
-  ```
-
-- Easy setup with [GitAlias](https://github.com/GitAlias/gitalias)
-  ```sh
-  wget -qO ~/.gitalias https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt
-  git config --global include.path ~/.gitalias
-  ```
 
 ## VIM
 
