@@ -27,7 +27,7 @@ echo -e '\n. ~/.git-completion.bash' >> ~/.bashrc
 
 wget -qO ~/.gitalias https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt
 git config --global include.path ~/.gitalias
-
+git config --global core.editor vim
 
 # Install starship (cross-shell prompt)
 brew install starship
