@@ -23,7 +23,7 @@ brew cask install font-fira-code
 
 # Git
 wget -qO ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-echo -e '\n. ~/.git-completion.bash' >> ~/.bashrc
+echo '. ~/.git-completion.bash' >> ~/.bashrc
 
 wget -qO ~/.gitalias https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt
 git config --global include.path ~/.gitalias
@@ -31,7 +31,7 @@ git config --global core.editor vim
 
 # Install starship (cross-shell prompt)
 brew install starship
-echo -e '\neval "$(starship init bash)"' >> ~/.bashrc
+echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
 
 # iTerm2
