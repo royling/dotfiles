@@ -1,9 +1,14 @@
 #!/bin/bash
 
 # Create .bash_profile/.bashrc
-if [[ ! -e ~/.bash_profile ]]; then
-  if [[ ! -f ~/.bashrc ]]; then
-    echo > ~/.bashrc
+if [ ! -e ~/.bash_profile ]; then
+  if [ ! -f ~/.bashrc ]; then
+    cat <<EOF > ~/.bashrc
+alias ls='ls -aGFh'
+alias ll='ls -l'
+alias cls='clear'
+alias vi='vim'
+EOF
   fi
   ln -s ~/.bashrc ~/.bash_profile
 fi
@@ -11,10 +16,12 @@ fi
 
 # Homebrew
 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+echo 'export HOMEBREW_NO_ANALYTICS=1' >> ~/.bashrc
 
 brew install vim
 brew install tmux
 brew install wget tree trash
+brew install gnu-getopt
 
 # FiraCode font
 brew tap homebrew/cask-fonts
@@ -22,8 +29,9 @@ brew cask install font-fira-code
 
 
 # Git
+brew install git
 wget -qO ~/.git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-echo '. ~/.git-completion.bash' >> ~/.bashrc
+echo 'source ~/.git-completion.bash' >> ~/.bashrc
 
 wget -qO ~/.gitalias https://raw.githubusercontent.com/GitAlias/gitalias/master/gitalias.txt
 git config --global include.path ~/.gitalias
@@ -62,6 +70,7 @@ brew install yarn
 
 # Python
 brew install pyenv
+#pyenv init 2>&1 | tee -a ~/.bashrc  # load pyenv automatically
 pyenv install 3.6.10
 
 
@@ -69,3 +78,8 @@ pyenv install 3.6.10
 brew tap adoptopenjdk/openjdk
 brew cask install adoptopenjdk8
 
+
+# Deno
+curl -fsSL https://deno.land/x/install/install.sh | sh
+deno completions bash > $HOME/deno.bash
+echo 'source $HOME/deno.bash' >> ~/.bashrc
