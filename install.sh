@@ -13,15 +13,14 @@ EOF
   ln -s ~/.bashrc ~/.bash_profile
 fi
 
+# Xcode command line dev tools
+xcode-select --install
 
 # Homebrew
-curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 echo 'export HOMEBREW_NO_ANALYTICS=1' >> ~/.bashrc
 
-brew install vim
-brew install tmux
-brew install wget tree trash
-brew install gnu-getopt
+brew install wget tree trash vim tmux gnu-getopt
 
 # FiraCode font
 brew tap homebrew/cask-fonts
