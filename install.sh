@@ -80,5 +80,8 @@ brew cask install adoptopenjdk8
 
 # Deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
+echo "export DENO_INSTALL=\"$HOME/.deno\"" >> ~/.bashrc
+echo 'export PATH="$DENO_INSTALL/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
 deno completions bash > $HOME/deno.bash
-echo 'source $HOME/deno.bash' >> ~/.bashrc
+echo "source $HOME/deno.bash" >> ~/.bashrc
