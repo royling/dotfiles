@@ -64,6 +64,9 @@ source ~/.bashrc
 
 nvm install $(nvm ls-remote --lts | tail -1 | awk '{print $2}')  # install the latest LTS version
 
+# Essential npm packages
+npm install --global fkill-cli
+
 brew install yarn
 
 
